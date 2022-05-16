@@ -3,6 +3,28 @@
 #include <fstream>
 #include <math.h>
 using namespace std;
+
+class Node{
+private:
+    vector<int> subList;
+    int children;
+    int size;
+    int pivot;
+    Node* left;
+    Node* right;
+public:
+    void setData(vector<int> v){subList = v;size=v.size();}
+    void setLeftChild(Node* n){left = n;}
+    void setRightChild(Node* n){right = n;}
+    
+    vector<int> getData(){return subList;}
+    int getPivot(){return pivot;}
+    int hasChildren(){return children;}
+    int subListSize(){return subList.size();}
+    
+    free();
+};
+
 int digits_in(int number) {
    return int(log10(number) + 1);
 }
@@ -95,7 +117,7 @@ void print_vector(vector<int> v){
         }
         cout << endl;
 }
-
+//to be implimented later
 class Hash{
 private:
     int used[10007];
@@ -233,9 +255,19 @@ void InsertionSort::sort(){
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class QuickSort : public IntSortingAlgs{
 public:
+    QuickSort();
     void sort();
+    Node* head;
+    bool sorted;
+    void setHead(Node* n){head =n;}
 };
-
+void QuickSort::sort(){
+    sorted = false;
+    head->setData(unsortedArray);
+    while(!sorted){
+        
+    }
+}
 
 int main(){
     
